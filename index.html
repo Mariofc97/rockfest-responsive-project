@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockFest 2025</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rock+Salt&display=swap" rel="stylesheet">
+     <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/desktop.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+</head>
+<body>
+        <header class="navbar">
+            <div class="container">
+                <div class="logo"><img src="./assets/images/logo.png" alt="Logo">
+                </div>
+                    <nav>
+                        <a href="#" id="current-page">Home</a>
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-btn">Tickets</a>
+                            <div class="dropdown-menu">
+                                <a href="#">Festival</a>
+                                <a href="#">Parking</a>
+                                <a href="#">Camping</a>
+                            </div>
+                        </div>
+                        
+                        <a href="./pages/FAQ.html">FAQ</a>
+                        <a href="./pages/contact.html" id="last-item">Contact</a>
+                    </nav>
+            </div>
+        </header>
+    </div>
+    <main>
+        <section class="hero" id="home">
+            <div class="container-hero">
+            <img src="./assets/images/background.jpg" alt="background" class="hero-img">
+            </div>
+            <div class="overlay">
+                <div><img src="./assets/images/logo.png" alt="logo" class="logo-relative"></div>
+                <p>The ultimate Rock & Camping event! <br> July 15-16, City of Rock <br>
+                This year we will have bands that disappeared and now continue their tour.</p>
+              <div class="logos-overlay">
+                <img src="./assets/images/logo Slipknot.png" alt="logo-slipknot" class="logo-band">
+                <img src="./assets/images/logo Linkin Park.png" alt="logo-linkin-park" class="logo-band">
+              </div>
+                <a href="#tickets" class="btn-primary">Buy Tickets</a>
+                <label for="lineup-toggle" class="btn-secondary">Line Up</label>
+            </div>
+
+                <input type="checkbox" id="lineup-toggle" class="modal-toggle">
+                <div id="lineup-modal" class="modal">
+                    <div class="modal-content">
+                        <label for="lineup-toggle" class="close">&times;</label>
+                        <img src="./assets/images/Line up.webp" alt="Lineup Poster">
+                    </div>
+                </div>
+        </section>
+
+        <section class="description">
+          <div class="container parking-camping">
+            <h2>Plan Your Stay!</h2>
+            <p>Enjoy the full festival experience with our on-site <strong>parking</strong> and <strong>camping</strong> facilities available all weekend!</p>
+            <div class="buttons">
+              <!-- Botón de Parking -->
+              <div class="button-container">
+                <a href="#parking" class="flip-button">
+                  <div class="front"><img src="./assets/images/parking.png" alt="parking"></div>
+                  <div class="back">View</div>
+                </a>
+              </div>
+              <!-- Botón de Camping -->
+              <div class="button-container">
+                <a href="#camping" class="flip-button">
+                  <div class="front"><img src="./assets/images/tent.png" alt="camping"></div>
+                  <div class="back">View</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="lineup" id="lineup">
+          <div class="container">
+            <h2>Festival Lineup</h2>
+        
+            <!-- Carrusel para July 15 -->
+            <h3>July 15</h3>
+            <div class="carousel">
+              <!-- Radio Inputs -->
+              <input type="radio" name="carousel-july15" id="july15-1" checked>
+              <input type="radio" name="carousel-july15" id="july15-2">
+        
+              <!-- Carrusel Track -->
+              <div class="carousel-track">
+                <!-- Grupo 1 -->
+                <div class="card">
+                  <img src="./assets/images/korn.jpg" alt="Korn">
+                  <div class="card-body">
+                    <h5 class="card-title">Korn</h5>
+                    <p class="card-text">Playing: 6:00 PM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/linkin-park.jpg" alt="Linkin Park">
+                  <div class="card-body">
+                    <h5 class="card-title">Linkin Park</h5>
+                    <p class="card-text">Playing: 7:30 PM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/metallica.jpg" alt="Metallica">
+                  <div class="card-body">
+                    <h5 class="card-title">Metallica</h5>
+                    <p class="card-text">Playing: 9:00 PM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/muse.jpg" alt="Muse">
+                  <div class="card-body">
+                    <h5 class="card-title">Muse</h5>
+                    <p class="card-text">Playing: 10:30 PM</p>
+                  </div>
+                </div>
+        
+                <!-- Grupo 2 -->
+                <div class="card">
+                  <img src="./assets/images/Foo_Fighters.webp" alt="Foo Fighters">
+                  <div class="card-body">
+                    <h5 class="card-title">Foo Fighters</h5>
+                    <p class="card-text">Playing: 11:30 PM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/disturbed.jpg" alt="Disturbed">
+                  <div class="card-body">
+                    <h5 class="card-title">Disturbed</h5>
+                    <p class="card-text">Playing: 12:00 AM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/rammstein.jpg" alt="Rammstein">
+                  <div class="card-body">
+                    <h5 class="card-title">Rammstein</h5>
+                    <p class="card-text">Playing: 1:00 AM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/sabaton.jpg" alt="Sabaton">
+                  <div class="card-body">
+                    <h5 class="card-title">Sabaton</h5>
+                    <p class="card-text">Playing: 2:00 AM (LAST)</p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Botones de Navegación -->
+              <div class="carousel-navigation">
+                <label for="july15-1" class="prev">←</label>
+                <label for="july15-2" class="next">→</label>
+              </div>
+            </div>
+        
+            <!-- Carrusel para July 16 -->
+            <h3>July 16</h3>
+            <div class="carousel">
+              <!-- Radio Inputs -->
+              <input type="radio" name="carousel-july16" id="july16-1" checked>
+              <input type="radio" name="carousel-july16" id="july16-2">
+        
+              <!-- Carrusel Track -->
+              <div class="carousel-track">
+                <!-- Grupo 1 -->
+                <div class="card">
+                  <img src="./assets/images/drowning_pool.webp" alt="Drowning Pool">
+                  <div class="card-body">
+                    <h5 class="card-title">Drowning Pool</h5>
+                    <p class="card-text">Playing: 6:00 PM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/Slipknot_-_Slipknot2.jpg" alt="Slipknot">
+                  <div class="card-body">
+                    <h5 class="card-title">Slipknot</h5>
+                    <p class="card-text">Playing: 7:30 PM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/system-of-a-down.jpg" alt="System of a Down">
+                  <div class="card-body">
+                    <h5 class="card-title">System of a Down</h5>
+                    <p class="card-text">Playing: 9:00 PM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/Avenged_Sevenfold_2.jpg" alt="Avenged Sevenfold">
+                  <div class="card-body">
+                    <h5 class="card-title">Avenged Sevenfold</h5>
+                    <p class="card-text">Playing: 10:30 PM</p>
+                  </div>
+                </div>
+        
+                <!-- Grupo 2 -->
+                <div class="card">
+                  <img src="./assets/images/Electric_callboy.webp" alt="Electric Callboy">
+                  <div class="card-body">
+                    <h5 class="card-title">Electric Callboy</h5>
+                    <p class="card-text">Playing: 11:30 PM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/motorhead.jpg" alt="Motorhead">
+                  <div class="card-body">
+                    <h5 class="card-title">Motorhead</h5>
+                    <p class="card-text">Playing: 12:00 AM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/the_offspring.jpg" alt="The Offspring">
+                  <div class="card-body">
+                    <h5 class="card-title">The Offspring</h5>
+                    <p class="card-text">Playing: 1:00 AM</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="./assets/images/godsmack.jpg" alt="Godsmack">
+                  <div class="card-body">
+                    <h5 class="card-title">Godsmack</h5>
+                    <p class="card-text">Playing: 2:00 AM (LAST)</p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Botones de Navegación -->
+              <div class="carousel-navigation">
+                <label for="july16-1" class="prev">←</label>
+                <label for="july16-2" class="next">→</label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <p>Contact us: info@metalfest2025.com <br>
+          <div class="social-icons">
+            <a href="#"><img src="./assets/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="./assets/images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="./assets/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="./assets/images/youtube.png" alt="YouTube"></a>
+            <a href="#"><img src="./assets/images/spotify.png" alt="Spotify"></a>
+        </div>
+            <p>Published <time datetime="2024-12-05">January 16, 2024</time></p>
+            <nav aria-label="Footer navigation">
+                <ul style="font-size: medium;">
+                    <li><a href="#FAQ">FAQ</a></li>
+                    <li><a href="#Terms">Terms</a></li>
+                    <li><a id="privacy-link" href="#Privacy">Privacy</a></li>
+                    <li><a href="#Cookies">Cookies</a></li>
+                </ul>
+            </nav>
+            <p>&copy; Metalfest2025. All rights reserved</p>
+
+        
+    </footer>
+    
+</body>
+</html>
