@@ -10,26 +10,126 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rock+Salt&display=swap" rel="stylesheet">
      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/desktop.css">
+    <link rel="stylesheet" href="../styles/desktop-contact.css">
     <link rel="stylesheet" href="./styles/responsive.css">
 </head>
 <body>
-        <header class="navbar">
-            <div class="container">
-                <div class="logo"><img src="./assets/images/logo.png" alt="Logo">
-                </div>
-                    <nav>
-                        <a href="/index.html">Home</a>
-                        <div class="dropdown">
-                          <a href="./pages/tickets.html" class="dropdown-btn">Tickets</a>
-                          <div class="dropdown-menu">
-                            <a href="#">Festival</a>
-                            <a href="#">Parking</a>
-                            <a href="#">Camping</a>
-                          </div>
-                        </div>
-                        <a href="./pages/FAQ.html">FAQ</a>
-                        <a href="#" id="current-page">Contact</a>
-                    </nav>
+    <header>
+        <nav aria-label="Header navigation">
+            <div>
+                <img src="../assets/images/logo.png" alt="logo" class="logo">
             </div>
-        </header>
+            <div>
+                <ul class="navbar">
+                    <li><a href="#" id="current-page">Home</a></li>
+                    <li class="dropdown">
+                        <a href="../pages/tickets.html">Tickets</a>
+                        <ul id="services-menu" class="services-menu">
+                            <li class="elements-dropdown"><a href="#">Festival</a></li>
+                            <li class="elements-dropdown"><a href="#">Camping</a></li>
+                            <li class="elements-dropdown"><a href="#">Parking</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../pages/FAQ.html">FAQ</a></li>
+                    <li id="last-item"><a href="../pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <main>
+          <section class="container-contact">
+                <h2>Get in Touch</h2>
+                <p>If you prefer, you can book your climbing filling out this form.</p>
+
+                <form action="submit_form.php" method="post" style="font-size: large;" class="submit-form">
+                    <div class="form-group">
+                      <label for="Addressee">Addresse:</label>
+                      <select name="Addresse" id="Addresse" class="dropdown-address">
+                        <option selected disabled>Select</option>
+                        <option value="Customer Service/Tickets">Custumer Service/ Tickets</option>
+                        <option value="press and media">Press and media</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Subject">Subject:</label>
+                      <textarea id="Subject" name="Subject" rows="1" required class=" comment-subject"></textarea>
+                  </div>
+
+                    <div class="form-group">
+                        <label for="comments">Comments:</label>
+                        <textarea id="comments" name="comments" rows="3" required class=" comment-container"></textarea>
+                    </div>
+
+                    <div class="form-group-button">
+                        <button type="submit">SUBMIT</button>
+                    </div>
+                </form>
+        </section>
+        <div class="map-container">
+            <h5>Festival location</h5>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093645!2d-122.41941508468303!3d37.7749292797597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064cb3b1e1b%3A0x2e8f21b4bc4c18e!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1614627986424!5m2!1sen!2sus"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+        </main>
+        <footer class="footer">
+            <section class="three-columns-footer">
+
+                <div class="footer-navigacion">
+                    <h5>Follow us</h5>
+                    <div class="social-icons">
+                        <a href="#"><img src="../assets/images/instagram.png" alt="Instagram"></a>
+                        <a href="#"><img src="../assets/images/twitter.png" alt="Twitter"></a>
+                        <a href="#"><img src="../assets/images/facebook.png" alt="Facebook"></a>
+                        <a href="#"><img src="../assets/images/youtube.png" alt="YouTube"></a>
+                        <a href="#"><img src="../assets/images/spotify.png" alt="Spotify"></a>
+                    </div>
+                    <p>Published <time datetime="2024-12-05">January 16, 2024</time></p>
+                    <nav aria-label="Footer navigation">
+                        <ul style="font-size: medium;">
+                            <li><a href="#FAQ">FAQ</a></li>
+                            <li><a href="#Terms">Terms</a></li>
+                            <li><a id="privacy-link" href="#Privacy">Privacy</a></li>
+                            <li><a href="#Cookies">Cookies</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="logo-goat">
+                    <img src="../assets/images/antichrist.png" alt="Logo" class="antichrist">
+                </div>
+                <div class="get-in-touch">
+                        <div class="contact-icons">
+                            <img src="../assets/images/bx_bx-phone.png" alt="phone" class="contact-logo">
+                            <a href="#" style="text-decoration: none; margin-right: 20px;">Call us: +1 123 456 7890</a>
+                        </div>
+                        <div class="contact-icons">
+                            <img src="../assets/images/Vector mail.png" alt="mail" class="contact-logo">
+                            <a href="#" style="text-decoration: none;">info@metalfest2025.com</a>
+                        </div>
+                        <div class="contact-icons">
+                            <img src="../assets/images/Vector location.png" alt="location" class="contact-logo">
+                            <a href="#" style="text-decoration: none;">123 Main St, Anytown, USA</a>
+                        </div>
+                    </div>
+            </section>
+            <div class="copyright">
+                <p>&copy; Metalfest2025. All rights reserved</p>
+            </div>
+        </footer>
+        </html>
