@@ -14,27 +14,36 @@
     <link rel="stylesheet" href="./styles/responsive.css">
 </head>
 <body>
-        <header class="navbar">
-            <div class="container">
-                <div class="logo"><img src="./assets/images/logo.png" alt="Logo">
-                </div>
-                    <nav>
-                        <a href="#" id="current-page">Home</a>
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-btn">Tickets</a>
-                            <div class="dropdown-menu">
-                                <a href="#">Festival</a>
-                                <a href="#">Parking</a>
-                                <a href="#">Camping</a>
-                            </div>
-                        </div>
-                        
-                        <a href="./pages/FAQ.html">FAQ</a>
-                        <a href="./pages/contact.html" id="last-item">Contact</a>
-                    </nav>
-            </div>
-        </header>
-    </div>
+  <header>
+    <nav>
+        <div>
+            <img src="../assets/images/logo.png" alt="logo" class="logo">
+        </div>
+        <!-- Menú hamburguesa -->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" id="menu-toggle-label" role="button" aria-label="Toggle navigation menu"
+            aria-labelledby="nav-label" aria-controls="nav-menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" id="nav-svg">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"></path>
+            </svg>
+        </label>
+        <span id="nav-label" class="visually-hidden">Hamburger menu icon to toggle the navigation menu on mobile</span>
+        <!-- Menú principal -->
+        <ul id="nav-menu" class="navbar">
+            <li><a href="#" id="current-page">Home</a></li>
+            <li class="dropdown">
+                <a href="../pages/tickets.html">Tickets</a>
+                <ul class="services-menu">
+                    <li class="elements-dropdown"><a href="#">Festival</a></li>
+                    <li class="elements-dropdown"><a href="#">Camping</a></li>
+                    <li class="elements-dropdown"><a href="#">Parking</a></li>
+                </ul>
+            </li>
+            <li><a href="../pages/FAQ.html">FAQ</a></li>
+            <li id="last-item"><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+  </header>
     <main>
         <section class="hero" id="home">
             <div class="container-hero">

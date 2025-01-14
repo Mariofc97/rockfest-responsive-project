@@ -36,86 +36,128 @@ body {
 }
 
 header {
-  position: fixed;
-  /* Importante para el dropdown */
-  background: var(--secondary-color);
-  font-family: var(--heading-font);
-  color: var(--text-color);
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing);
-  z-index: 1000;
-}
-
-.dropdown {
-  position: relative;
-  /* Necesario para que el dropdown-menu dependa de este contenedor */
-  display: inline-block;
-  z-index: 1000;
-  /* Asegúrate de que esté por encima */
-}
-
-.dropdown-menu {
-  visibility: hidden;
-  /* Ocultarlo inicialmente */
-  opacity: 0;
-  /* Invisibilidad inicial */
-  position: absolute;
-  top: 100%;
-  /* Mostrar justo debajo del botón */
-  left: 0;
+  padding: 10px 30px;
   background: var(--secondary-color);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  z-index: 1001;
-  padding: 10px 0;
-  transform: translateY(-10px);
-  /* Movimiento inicial hacia arriba */
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.dropdown:hover .dropdown-menu {
-  visibility: visible;
-  /* Mostrar al pasar el ratón */
-  opacity: 1;
-  /* Hacer visible */
-  transform: translateY(0);
-  /* Volver a posición original */
-}
-
-.dropdown-menu a {
-  display: block;
+  font-family: var(--heading-font);
   color: var(--text-color);
-  padding: 10px 15px;
-  margin: 0;
-  /* Asegúrate de que no haya márgenes */
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
 }
 
-.dropdown-menu a:hover {
-  background: var(--primary-color);
-  color: #fff;
-}
-
-header .logo img {
+header .logo {
   height: 50px;
 }
 
-header nav a {
-  color: var(--text-color);
-  margin-left: 15px;
-  text-decoration: none;
-  padding: 30px;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+.navbar {
+  display: flex;
+  margin-left: 350px;
+  list-style: none;
+  gap: 20px;
 }
 
-header nav a:hover {
-  color: var(--primary-color);
+header nav {
+  display: flex;
 }
+
+header nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+header nav ul li {
+  margin-left: 50px;
+  padding-left: 20px;
+  text-align: end;
+  justify-content: right;
+  margin-top: 0
+  
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  margin: 0;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.elements-dropdown {
+  margin: 0;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle-label {
+  display: none;
+  cursor: pointer;
+}
+
+#menu-toggle-label svg {
+  width: 30px;
+  fill: var(--text-color);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative; /* Necesario para que el menú sea relativo al padre */
+}
+
+.dropdown:hover {
+  display: block;
+}
+
+.services-menu {
+  display: inline-block;
+  top: 75%;
+  padding: 10px;
+  white-space: nowrap;
+  position: absolute;
+  left: 0px;
+  z-index: 2;
+  padding-left: 16px;
+  background-color: #252525;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2vh);
+  transition: opacity 0.3s, transform 0.15s;
+}
+
+.dropdown:hover #services-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+header nav ul li a:active {
+  color: var(--primary-color)
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
 
 .logo-relative {
   width: 300px;

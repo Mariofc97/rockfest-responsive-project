@@ -17,6 +17,64 @@ body {
         font-size: 0.9rem;
     }
 
+    #menu-toggle-label {
+        display: block;
+        position: absolute; /* Posición absoluta para controlarlo fácilmente */
+        top: 1.2rem; /* Ajusta la distancia desde la parte superior */
+        right: 2rem; /* Lo mueve a la derecha */
+        cursor: pointer;
+        z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+    }
+    
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -60%; /* Fuera del viewport a la izquierda */
+        width: 90%; /* Ancho del navbar */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        background: var(--secondary-color);
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 999; /* Encima del contenido del fondo */
+        transform: translateX(0); /* Inicialmente oculto */
+        transition: transform 0.4s ease; /* Transición suave */
+    }
+
+    #menu-toggle:checked ~ .navbar {
+        transform: translateX(100%); /* Aparece desde la izquierda */
+    }
+
+    /* Fondo oscuro (ya no es una clase separada) */
+    #menu-toggle:checked ~ .navbar:before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo */
+        z-index: 998; /* Detrás del navbar */
+    }
+
+    .navbar a {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    #menu-toggle:checked ~ #menu-toggle-label[aria-expanded="false"] {
+        aria-expanded: true;
+    }
+
+    #menu-toggle:checked ~ .navbar {
+        left: 0;
+        display: flex;
+    }
+
+
     .overlay {
         top: 60%;
         left: 50%;
@@ -142,6 +200,39 @@ body {
         padding: 5px 0;
         font-size: 0.8rem;
     }
+
+    #menu-toggle-label {
+        display: block;
+        position: absolute; /* Posición absoluta para controlarlo fácilmente */
+        top: 1rem; /* Ajusta la distancia desde la parte superior */
+        right: 1rem; /* Lo mueve a la derecha */
+        cursor: pointer;
+        z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -80%; /* Fuera del viewport a la izquierda */
+        width: 80%; /* Ancho del navbar */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        background: var(--secondary-color);
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 999; /* Encima del contenido del fondo */
+        transform: translateX(0); /* Inicialmente oculto */
+        transition: transform 0.4s ease;
+ /* Centra los enlaces horizontalmente */
+    }
+
+    .navbar a {
+        font-size: 1rem;
+        margin: 10px 0; /* Tamaño reducido para móviles */
+    }
+
 
     .overlay {
         top: 50%;

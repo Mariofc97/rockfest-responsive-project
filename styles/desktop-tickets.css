@@ -2,31 +2,31 @@
     --primary-color: #ff5733;
     --secondary-color: #871919;
     --background-color: linear-gradient(to bottom,
-            #000000 10%,
-            /* Negro */
-            #ff0000 30%,
-            /* Rojo */
-            #ff7f00 60%,
-            /* Naranja */
-            #ffff00 90%
-            /* Amarillo */
-        );
+        #000000 10%,
+        /* Negro */
+        #ff0000 30%,
+        /* Rojo */
+        #ff7f00 60%,
+        /* Naranja */
+        #ffff00 90%
+        /* Amarillo */
+      );
     --text-color: #fff;
     --heading-font: "Rock Salt", serif;
     --body-font: "Poppins", serif;
     --spacing: 20px;
-}
-
-body,
-html {
+  }
+  
+  
+  body {
     margin: 0;
     padding: 0;
-    background-color: #0e0e0e;
     font-family: var(--body-font);
-    color: #fff;
-}
-
-header {
+    background-color: #000000;
+    color: var(--secondary-color);
+  }
+  
+  header {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -150,134 +150,195 @@ header nav ul li a:hover {
   }
 
 
-/* Title Section */
-.title {
+  .title {
     font-family: var(--heading-font);
+    background-color: var(--primary-color);
     text-align: center;
     font-size: 2.5rem;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    padding: 100px;
     color: #fff;
     letter-spacing: 2px;
     padding: 6rem;
 }
 
-.faq-wrapper {
-    padding: 50px 5%;
-    background-color: #121212;
-    text-align: center;
-}
-
-.faq-wrapper h1 {
-    margin-bottom: 50px;
-}
-
-/* FAQ Section Container */
-.faq-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1200px;
+.tickets-section {
+    display: flex; /* Cambia de grid a flex */
+    flex-direction: row; /* Alinea los elementos en fila */
+    justify-content: center; /* Espacia uniformemente los cuadros */ /* Alinea los cuadros verticalmente al centro */
+    padding: 80px 0;
+    max-width: 100%;
     margin: 0 auto;
+    gap: 80px; /* Espaciado entre los cuadros */
 }
 
-.faq-column {
-    background-color: #373737;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin-bottom: 40px;
-    text-align: center;
+.ticket-container {
+    display: inline-block;
+    margin-bottom: 20px;
+    perspective: 1000px;
+    width: 26%;
+    height: 200px;
+    margin-left: 60px; /* Ajustar margen izquierdo para mayor separación */
 }
 
-.faq-icon {
+.ticket-card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.ticket-card:hover {
+    transform: rotateY(180deg);
+}
+
+.ticket-front, .ticket-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
-}
-
-.faq-icon img {
-    width: 60px;
-    height: 60px;
-}
-
-.faq-header {
     text-align: center;
-    padding: 10px;
-    margin-bottom: 20px;
-    display: block;
-    border: 5px solid #000000;
-    border-radius: 10px;
-    background-color: var(--secondary-color);
+    padding: 20px;
 }
 
-.faq-header h2 {
+.ticket-front {
+    background-color: var(--primary-color); /* Rojo del ejemplo */
+    color: white;
     font-family: var(--heading-font);
-    font-size: 1.8rem;
-    color: #ff5722;
-    text-transform: uppercase;
-    margin: 0;
 }
 
-.faq-item {
+.ticket-back {
+    background-color: #ffcc66; /* Amarillo del ejemplo */
+    color: black;
+    font-size: x-small;
+    transform: rotateY(180deg);
+}
+
+.ticket-logo {
+    width: 50px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
 }
 
-.faq-question {
-    display: block;
-    background-color: transparent;
-    color: #ffff;
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: left;
-    cursor: pointer;
-    padding: 10px 0;
+.ticket-form {
+    margin-top: 15px;
+}
+
+.ticket-form select {
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #871919;
+}
+
+.btn-primary {
+    background-color: #871919;
+    margin-top: 5px;
+    color: white;
+    padding: 10px 15px;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff5733;
+}
+
+/* Sección del boletín */
+.newsletter-section {
+    position: relative; /* Permite añadir una capa de superposición */
+    background-image: url('../assets/images/background-tickets.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.newsletter-section::before {
+    content: ''; /* Crear la capa de superposición */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    text-decoration: none;
-    position: relative;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Color negro con 60% de transparencia */
+    z-index: 1; /* Asegura que la capa quede debajo del contenido */
 }
 
-.faq-question:hover {
-    color: #ffa366;
+.newsletter-content {
+    position: relative; /* Coloca el contenido por encima de la superposición */
+    z-index: 2;
 }
 
-.faq-question::before {
-    content: '\25B6';
-    /* Right arrow */
-    font-size: 0.8rem;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-    display: inline-block;
+.newsletter-content h2 {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-input[type="checkbox"] {
-    display: none;
+.newsletter-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
-input[type="checkbox"]:checked+.faq-question::before {
-    transform: rotate(90deg);
-    /* Rotates arrow down */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    justify-content: left;
-    text-align: left;
+.newsletter-form input[type="text"],
+.newsletter-form input[type="email"] {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    font-size: 1rem;
+    color: #333;
+}
+
+.newsletter-form input[type="text"]::placeholder,
+.newsletter-form input[type="email"]::placeholder {
+    color: #666;
+}
+
+.newsletter-form .privacy-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 0.9rem;
-    color: var(--primary-color);
-    padding-left: 10px;
-    line-height: 1.6;
 }
 
-input[type="checkbox"]:checked+.faq-question+.faq-answer {
-    max-height: 500px;
-    /* Allow enough space for content */
+.newsletter-form .privacy-checkbox input {
+    width: auto;
+}
+
+.btn-newsletter {
+    background-color: #ff5733;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-newsletter:hover {
+    background-color: #871919;
 }
 
 .footer {
@@ -394,6 +455,17 @@ input[type="checkbox"]:checked+.faq-question+.faq-answer {
         display: flex;
     }
 
+    .tickets-section {
+        flex-wrap: wrap; /* Permitir que los cuadros se muevan a nuevas filas */
+        justify-content: space-evenly; /* Distribuir uniformemente */
+        gap: 40px; /* Reducir el espacio entre cuadros */
+    }
+
+    .ticket-container {
+        width: 40%; /* Aumentar el ancho para adaptarse a tabletas */
+        margin-left: 0; /* Eliminar márgenes laterales */
+    }
+
     
 }
 
@@ -452,3 +524,16 @@ input[type="checkbox"]:checked+.faq-question+.faq-answer {
         font-size: 1rem;
         margin: 10px 0; /* Tamaño reducido para móviles */
     }
+
+    .tickets-section {
+        flex-direction: column; 
+        margin-left: 20px;/* Cuadros en una sola columna */
+        align-items: center; /* Centrar los cuadros */
+        gap: 30px; /* Reducir el espacio entre cuadros */
+    }
+
+    .ticket-container {
+        width: 80%; /* Ancho más grande para móviles */
+        margin-left: 30px; /* Eliminar márgenes laterales */
+    }
+}
