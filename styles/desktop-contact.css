@@ -2,39 +2,29 @@
     --primary-color: #ff5733;
     --secondary-color: #871919;
     --background-color: linear-gradient(to bottom,
-        #000000 10%,
-        /* Negro */
-        #ff0000 30%,
-        /* Rojo */
-        #ff7f00 60%,
-        /* Naranja */
-        #ffff00 90%
-        /* Amarillo */
-      );
+            #000000 10%,
+            #ff0000 30%,
+            #ff7f00 60%,
+            #ffff00 90%);
     --text-color: #fff;
     --heading-font: "Rock Salt", serif;
     --body-font: "Poppins", serif;
     --spacing: 20px;
-  }
-  
-  
-  body {
+}
+
+
+body {
     margin: 0;
     padding: 0;
     font-family: var(--body-font);
     background: linear-gradient(to bottom,
-        #000000 10%,
-        /* Negro */
-        #ff0000 30%,
-        /* Rojo */
-        #ff7f00 60%,
-        /* Naranja */
-        #ffff00 90%
-        /* Amarillo */
-      );
+            #000000 10%,
+            #ff0000 30%,
+            #ff7f00 60%,
+            #ffff00 90%);
     color: var(--secondary-color);
 }
-  
+
 header {
     position: relative;
     display: flex;
@@ -52,7 +42,7 @@ header .logo {
 
 .navbar {
     display: flex;
-    margin-left: 350px;
+    margin-left: 200px;
     list-style: none;
     gap: 20px;
 }
@@ -68,12 +58,11 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 50px;
+    margin-left: 10px;
     padding-left: 20px;
     text-align: end;
     justify-content: right;
     margin-top: 0
-    
 }
 
 .navbar a {
@@ -88,10 +77,6 @@ header nav ul li {
 .navbar a:hover {
     background: var(--primary-color);
     color: white;
-}
-
-.elements-dropdown {
-    margin: 0;
 }
 
 #menu-toggle {
@@ -121,55 +106,59 @@ header nav ul li {
 
 /* Dropdown */
 .dropdown {
-    position: relative; /* Necesario para que el menú sea relativo al padre */
+    position: relative;
+    /* Necessary for the menu to be relative to the parent */
 }
-
-.dropdown:hover {
-    display: block;
-  }
 
 .services-menu {
-    display: inline-block;
-    top: 75%;
-    padding: 10px;
-    white-space: nowrap;
+    display: none;
     position: absolute;
-    left: 0px;
-    z-index: 2;
-    padding-left: 16px;
-    background-color: #252525;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-2vh);
-    transition: opacity 0.3s, transform 0.15s;
+    top: 100%;
+    left: 0;
+    background-color: var(--secondary-color);
+    padding: 10px 0;
+    list-style: none;
+    z-index: 10;
+    width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown:hover #services-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+.services-menu li a {
+    display: block;
+    color: var(--text-color);
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
 
-header nav ul li a:active {
-    color: var(--primary-color)
-  }
-  
-header nav ul li a:hover {
-    text-decoration: underline;
-  }
+.services-menu li a:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
 
-  @keyframes slideUp {
+/* Show the menu when hovering */
+.dropdown:hover .services-menu {
+    display: block;
+}
+
+@keyframes slideUp {
     from {
-        transform: translateY(50px); /* Comienza fuera de la pantalla (abajo) */
-        opacity: 0; /* Invisible */
+        transform: translateY(50px);
+        /* Starts off-screen (below) */
+        opacity: 0;
+        /* Invisible */
     }
+
     to {
-        transform: translateY(0); /* En su posición original */
-        opacity: 1; /* Totalmente visible */
+        transform: translateY(0);
+        /* In its original position */
+        opacity: 1;
+        /* Fully visible */
     }
 }
 
-  .container-contact {
+.container-contact {
     animation: slideUp 1s ease-out;
     max-width: 600px;
     margin: 0 auto;
@@ -239,7 +228,7 @@ textarea {
     resize: none;
 }
 
-/* Botón */
+/* Button */
 .form-group-button button {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
@@ -280,6 +269,7 @@ textarea {
     text-align: center;
     margin-bottom: 10px;
 }
+
 .map-container {
     margin: 30px;
     border-radius: 10px;
@@ -292,6 +282,8 @@ textarea {
     height: 100%;
     min-height: 300px;
 }
+
+/* footer*/
 
 .three-columns-footer {
     display: grid;
@@ -332,12 +324,15 @@ textarea {
 
 .antichrist {
     transition: transform 0.5s ease, filter 1s ease;
-    transform-origin: center; /* Rotación desde el centro */
+    transform-origin: center;
+    /* Rotate from the center */
 }
-    
+
 .antichrist:hover {
-        transform: rotate(15deg) scale(1.2); /* Rotación y zoom al pasar el mouse */
-        filter: drop-shadow(0 0 10px rgba(248, 223, 0, 0.995)) brightness(1.3); /* Efecto de brillo*/
+    transform: rotate(15deg) scale(1.2);
+    /* Rotation and zoom on hover */
+    filter: drop-shadow(0 0 10px rgba(248, 223, 0, 0.995)) brightness(1.3);
+    /* Glow effect */
 }
 
 
@@ -393,45 +388,61 @@ textarea {
 @media (max-width: 1024px) {
     #menu-toggle-label {
         display: block;
-        position: absolute; /* Posición absoluta para controlarlo fácilmente */
-        top: 1.2rem; /* Ajusta la distancia desde la parte superior */
-        right: 2rem; /* Lo mueve a la derecha */
+        position: absolute;
+        /* Absolute positioning for easier control */
+        top: 1.2rem;
+        right: 2rem;
+        /* Moves it to the right */
         cursor: pointer;
-        z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+        z-index: 1000;
     }
-    
+
+    #menu-toggle:checked~nav .dropdown .services-menu {
+        display: block;
+        /* Make the menu visible on mobile */
+    }
+
+    /* Automatically hide the menu when the hamburger closes */
+    #menu-toggle:not(:checked)~nav .dropdown .services-menu {
+        display: none;
+    }
 
     .navbar {
         display: flex;
         flex-direction: column;
         position: fixed;
         top: 0;
-        left: -60%; /* Fuera del viewport a la izquierda */
-        width: 90%; /* Ancho del navbar */
-        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        left: -60%;
+        /* Off the viewport to the left */
+        width: 90%;
+        /* Navbar width */
+        height: 90vh;
         background: var(--secondary-color);
         align-items: center;
         padding: 10px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 999; /* Encima del contenido del fondo */
-        transform: translateX(0); /* Inicialmente oculto */
-        transition: transform 0.4s ease; /* Transición suave */
+        z-index: 999;
+        /* Above background content */
+        transform: translateX(0);
+        /* Initially hidden */
+        transition: transform 0.4s ease;
+        /* Smooth transition */
     }
 
-    #menu-toggle:checked ~ .navbar {
-        transform: translateX(100%); /* Aparece desde la izquierda */
+    #menu-toggle:checked~.navbar {
+        transform: translateX(100%);
     }
 
-    /* Fondo oscuro (ya no es una clase separada) */
-    #menu-toggle:checked ~ .navbar:before {
+    #menu-toggle:checked~.navbar:before {
         content: '';
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo */
-        z-index: 998; /* Detrás del navbar */
+        background-color: rgba(0, 0, 0, 0.7);
+        /* Darkens the background */
+        z-index: 998;
     }
 
     .navbar a {
@@ -439,11 +450,11 @@ textarea {
         margin: 0;
     }
 
-    #menu-toggle:checked ~ #menu-toggle-label[aria-expanded="false"] {
+    #menu-toggle:checked~#menu-toggle-label[aria-expanded="false"] {
         aria-expanded: true;
     }
 
-    #menu-toggle:checked ~ .navbar {
+    #menu-toggle:checked~.navbar {
         left: 0;
         display: flex;
     }
@@ -474,47 +485,58 @@ textarea {
     }
 
     .three-columns-footer {
-        grid-template-columns: 1fr 1fr 1fr; /* Cambia a dos columnas */
-        gap: 15px; /* Espaciado entre las columnas */
+        grid-template-columns: 1fr 1fr 1fr;
+        /* Changes to two columns */
+        gap: 15px;
     }
 
     .antichrist {
-        width: 120px; /* Reduce el tamaño del logo */
-        height: auto; /* Mantén la proporción */
-        margin: auto; /* Centra el logo */
+        width: 120px;
+        height: auto;
+        margin: auto;
     }
 
     .contact-icons {
-        margin-bottom: 15px; /* Ajusta el espaciado */
+        margin-bottom: 15px;
     }
 
     .footer nav ul {
-        gap: 10px; /* Reduce la separación entre enlaces */
+        gap: 10px;
     }
 
     .footer .social-icons a {
         width: 30px;
-        height: 30px; /* Tamaño reducido de los iconos sociales */
+        height: 30px;
     }
 }
 
 @media (max-width: 768px) {
 
     .footer {
-        display: flex; /* Flexbox para el contenedor principal */
-        flex-direction: column; /* Alinea los elementos en una columna */
-        align-items: center; /* Centra horizontalmente todos los elementos */
-        justify-content: center; /* Centra verticalmente si el footer tiene suficiente altura */
-        text-align: center; /* Asegura que el texto esté centrado */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Centers all elements horizontally */
+        justify-content: center;
+        /* Centers vertically if the footer has enough height */
+        text-align: center;
     }
 
     #menu-toggle-label {
         display: block;
-        position: absolute; /* Posición absoluta para controlarlo fácilmente */
-        top: 1rem; /* Ajusta la distancia desde la parte superior */
-        right: 1rem; /* Lo mueve a la derecha */
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
         cursor: pointer;
-        z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+        z-index: 1000;
+    }
+
+    #menu-toggle:checked~nav .dropdown .services-menu {
+        display: block;
+    }
+
+    #menu-toggle:not(:checked)~nav .dropdown .services-menu {
+        display: none;
     }
 
     header {
@@ -526,22 +548,21 @@ textarea {
         flex-direction: column;
         position: fixed;
         top: 0;
-        left: -80%; /* Fuera del viewport a la izquierda */
-        width: 80%; /* Ancho del navbar */
-        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        left: -60%;
+        width: 80%;
+        height: 90vh;
         background: var(--secondary-color);
         align-items: center;
         padding: 10px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 999; /* Encima del contenido del fondo */
-        transform: translateX(0); /* Inicialmente oculto */
+        z-index: 999;
+        transform: translateX(0);
         transition: transform 0.4s ease;
- /* Centra los enlaces horizontalmente */
     }
 
     .navbar a {
         font-size: 1rem;
-        margin: 10px 0; /* Tamaño reducido para móviles */
+        margin: 10px 0;
     }
 
     .container-contact h2 {
@@ -564,22 +585,24 @@ textarea {
         font-size: 0.8rem;
         padding: 6px 10px;
     }
+
     .three-columns-footer {
         position: relative;
         grid-template-columns: 1fr;
-        background: var(--secondary-color) url('../assets/images/antichrist.png') no-repeat center/contain; /* Cambia a una sola columna */
-        text-align: center; /* Centra todo el contenido */
+        /* Changes to a single column*/
+        background: var(--secondary-color) url('../assets/images/antichrist.png') no-repeat center/contain;
+        text-align: center;
     }
 
     .social-icons {
         display: flex;
-        justify-content: center; /* Centra horizontalmente los íconos dentro del contenedor */
-        align-items: center; /* Centra verticalmente los íconos dentro del contenedor */
-        width: fit-content; /* Ajusta automáticamente el ancho al contenido */
-        padding: 10px; /* Espaciado interno */
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        padding: 10px;
         padding-left: 30px;
         border-radius: 5px;
-        margin: 10px 0; /* Espaciado vertical entre elementos */
+        margin: 10px 0;
     }
 
     .antichrist {
@@ -587,41 +610,40 @@ textarea {
     }
 
     .contact-icons {
-        display: flex; /* Flexbox para organizar icono y texto */
-        align-items: center; /* Alineación vertical del icono y texto */
-        justify-content: flex-start; /* Alineación horizontal */
-        gap: 8px; /* Espaciado más ajustado entre el icono y el texto */
-        margin-bottom: 10px; /* Espaciado inferior reducido */
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-bottom: 10px;
     }
 
     .contact-icons img {
-        width: 18px; /* Tamaño reducido del icono */
-        height: 18px; /* Mantén la proporción del icono */
+        width: 18px;
+        height: 18px;
     }
 
     .contact-icons a {
-        font-size: 0.9rem; /* Tamaño de texto más pequeño para móviles */
-        line-height: 1.2; /* Espaciado de línea más ajustado */
-        text-align: left; /* Asegura que el texto esté alineado */
+        font-size: 0.9rem;
+        line-height: 1.2;
+        text-align: left;
     }
 
     .footer .social-icons {
-        margin: 10px 0; /* Espaciado superior e inferior */
-        justify-content: center; /* Centra los iconos sociales */
-        gap: 10px; /* Reduce el espacio entre iconos */
+        margin: 10px 0;
+        justify-content: center;/ gap: 10px;
     }
 
     .footer .social-icons a {
         width: 25px;
-        height: 25px; /* Iconos sociales más pequeños */
+        height: 25px;
     }
 
     .footer nav ul {
-        flex-direction: column; /* Apila los enlaces */
-        gap: 5px; /* Espaciado entre los enlaces */
+        flex-direction: column;
+        gap: 5px;
     }
 
     .footer nav ul li a {
-        font-size: 0.8rem; /* Reduce el tamaño de fuente de los enlaces */
+        font-size: 0.8rem;
     }
 }

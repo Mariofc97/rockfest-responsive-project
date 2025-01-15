@@ -2,31 +2,26 @@
     --primary-color: #ff5733;
     --secondary-color: #871919;
     --background-color: linear-gradient(to bottom,
-        #000000 10%,
-        /* Negro */
-        #ff0000 30%,
-        /* Rojo */
-        #ff7f00 60%,
-        /* Naranja */
-        #ffff00 90%
-        /* Amarillo */
-      );
+            #000000 10%,
+            #ff0000 30%,
+            #ff7f00 60%,
+            #ffff00 90%);
     --text-color: #fff;
     --heading-font: "Rock Salt", serif;
     --body-font: "Poppins", serif;
     --spacing: 20px;
-  }
-  
-  
-  body {
+}
+
+
+body {
     margin: 0;
     padding: 0;
     font-family: var(--body-font);
     background-color: #000000;
     color: var(--secondary-color);
-  }
-  
-  header {
+}
+
+header {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -43,7 +38,7 @@ header .logo {
 
 .navbar {
     display: flex;
-    margin-left: 350px;
+    margin-left: 200px;
     list-style: none;
     gap: 20px;
 }
@@ -59,12 +54,11 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 50px;
+    margin-left: 10px;
     padding-left: 20px;
     text-align: end;
     justify-content: right;
     margin-top: 0
-    
 }
 
 .navbar a {
@@ -79,10 +73,6 @@ header nav ul li {
 .navbar a:hover {
     background: var(--primary-color);
     color: white;
-}
-
-.elements-dropdown {
-    margin: 0;
 }
 
 #menu-toggle {
@@ -112,45 +102,61 @@ header nav ul li {
 
 /* Dropdown */
 .dropdown {
-    position: relative; /* Necesario para que el menú sea relativo al padre */
+    position: relative;
+    /* Necessary for the menu to be relative to the parent */
 }
-
-.dropdown:hover {
-    display: block;
-  }
 
 .services-menu {
-    display: inline-block;
-    top: 75%;
-    padding: 10px;
-    white-space: nowrap;
+    display: none;
     position: absolute;
-    left: 0px;
-    z-index: 2;
-    padding-left: 16px;
-    background-color: #252525;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-2vh);
-    transition: opacity 0.3s, transform 0.15s;
+    top: 100%;
+    left: 0;
+    background-color: var(--secondary-color);
+    padding: 10px 0;
+    list-style: none;
+    z-index: 10;
+    width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown:hover #services-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+.services-menu li a {
+    display: block;
+    color: var(--text-color);
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
 
-header nav ul li a:active {
-    color: var(--primary-color)
-  }
-  
-header nav ul li a:hover {
-    text-decoration: underline;
-  }
+.services-menu li a:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Show the menu when hovering */
+.dropdown:hover .services-menu {
+    display: block;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        /* Starts off-screen (below) */
+        opacity: 0;
+        /* Invisible */
+    }
+
+    to {
+        transform: translateY(0);
+        /* In its original position */
+        opacity: 1;
+        /* Fully visible */
+    }
+}
 
 
-  .title {
+.title {
+    animation: slideUp 1s ease-out;
     font-family: var(--heading-font);
     background-color: var(--primary-color);
     text-align: center;
@@ -162,13 +168,16 @@ header nav ul li a:hover {
 }
 
 .tickets-section {
-    display: flex; /* Cambia de grid a flex */
-    flex-direction: row; /* Alinea los elementos en fila */
-    justify-content: center; /* Espacia uniformemente los cuadros */ /* Alinea los cuadros verticalmente al centro */
+    animation: slideUp 1s ease-out;
+    display: flex;
+    flex-direction: row;
+    /* Aligns elements in a row */
+    justify-content: center;
     padding: 80px 0;
     max-width: 100%;
     margin: 0 auto;
-    gap: 80px; /* Espaciado entre los cuadros */
+    gap: 80px;
+    /* Spacing between the cards */
 }
 
 .ticket-container {
@@ -177,7 +186,7 @@ header nav ul li a:hover {
     perspective: 1000px;
     width: 26%;
     height: 200px;
-    margin-left: 60px; /* Ajustar margen izquierdo para mayor separación */
+    margin-left: 60px;
 }
 
 .ticket-card {
@@ -191,7 +200,8 @@ header nav ul li a:hover {
     transform: rotateY(180deg);
 }
 
-.ticket-front, .ticket-back {
+.ticket-front,
+.ticket-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -206,13 +216,13 @@ header nav ul li a:hover {
 }
 
 .ticket-front {
-    background-color: var(--primary-color); /* Rojo del ejemplo */
+    background-color: var(--primary-color);
     color: white;
     font-family: var(--heading-font);
 }
 
 .ticket-back {
-    background-color: #ffcc66; /* Amarillo del ejemplo */
+    background-color: #ffcc66;
     color: black;
     font-size: x-small;
     transform: rotateY(180deg);
@@ -250,10 +260,12 @@ header nav ul li a:hover {
     background-color: #ff5733;
 }
 
-/* Sección del boletín */
+/* newsletter-section */
 .newsletter-section {
-    position: relative; /* Permite añadir una capa de superposición */
-    background-image: url('../assets/images/background-tickets.jpg'); /* Reemplaza con la ruta de tu imagen */
+    animation: slideUp 1s ease-out;
+    position: relative;
+    /* Allows adding an overlay layer */
+    background-image: url('../assets/images/background-tickets.jpg');
     background-size: cover;
     background-position: center;
     padding: 80px 20px;
@@ -262,18 +274,22 @@ header nav ul li a:hover {
 }
 
 .newsletter-section::before {
-    content: ''; /* Crear la capa de superposición */
+    content: '';
+    /* Create the overlay layer */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Color negro con 60% de transparencia */
-    z-index: 1; /* Asegura que la capa quede debajo del contenido */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Black color with 60% transparency */
+    z-index: 1;
+    /* Ensures the layer is below the content */
 }
 
 .newsletter-content {
-    position: relative; /* Coloca el contenido por encima de la superposición */
+    position: relative;
+    /* Places the content above the overlay */
     z-index: 2;
 }
 
@@ -304,7 +320,8 @@ header nav ul li a:hover {
     padding: 10px;
     border: 1px solid #fff;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Background white with transparence */
     font-size: 1rem;
     color: #333;
 }
@@ -396,49 +413,60 @@ header nav ul li a:hover {
 }
 
 /* Responsive Design */
-/* Versión tablet */
+/* Tablet Version */
 @media (max-width: 1024px) {
     #menu-toggle-label {
         display: block;
-        position: absolute; /* Posición absoluta para controlarlo fácilmente */
-        top: 1.2rem; /* Ajusta la distancia desde la parte superior */
-        right: 2rem; /* Lo mueve a la derecha */
+        position: absolute;
+        top: 1.2rem;
+        right: 2rem;
         cursor: pointer;
-        z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+        z-index: 1000;
     }
-    
+
+    #menu-toggle:checked~nav .dropdown .services-menu {
+        display: block;
+        /* Make the menu visible on mobile */
+    }
+
+    /* Automatically hide the menu when the hamburger menu closes */
+    #menu-toggle:not(:checked)~nav .dropdown .services-menu {
+        display: none;
+    }
 
     .navbar {
         display: flex;
         flex-direction: column;
         position: fixed;
         top: 0;
-        left: -60%; /* Fuera del viewport a la izquierda */
-        width: 90%; /* Ancho del navbar */
-        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        left: -60%;
+        width: 90%;
+        height: 90vh;
         background: var(--secondary-color);
         align-items: center;
         padding: 10px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 999; /* Encima del contenido del fondo */
-        transform: translateX(0); /* Inicialmente oculto */
-        transition: transform 0.4s ease; /* Transición suave */
+        z-index: 999;
+        transform: translateX(0);
+        transition: transform 0.4s ease;
     }
 
-    #menu-toggle:checked ~ .navbar {
-        transform: translateX(100%); /* Aparece desde la izquierda */
+    #menu-toggle:checked~.navbar {
+        transform: translateX(100%);
     }
 
-    /* Fondo oscuro (ya no es una clase separada) */
-    #menu-toggle:checked ~ .navbar:before {
+    /* Dark Background*/
+    #menu-toggle:checked~.navbar:before {
         content: '';
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo */
-        z-index: 998; /* Detrás del navbar */
+        background-color: rgba(0, 0, 0, 0.7);
+        /* Darkens the background */
+        z-index: 998;
+        /* Behing the navbar*/
     }
 
     .navbar a {
@@ -446,60 +474,50 @@ header nav ul li a:hover {
         margin: 0;
     }
 
-    #menu-toggle:checked ~ #menu-toggle-label[aria-expanded="false"] {
+    #menu-toggle:checked~#menu-toggle-label[aria-expanded="false"] {
         aria-expanded: true;
     }
 
-    #menu-toggle:checked ~ .navbar {
+    #menu-toggle:checked~.navbar {
         left: 0;
         display: flex;
     }
 
     .tickets-section {
-        flex-wrap: wrap; /* Permitir que los cuadros se muevan a nuevas filas */
-        justify-content: space-evenly; /* Distribuir uniformemente */
-        gap: 40px; /* Reducir el espacio entre cuadros */
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        /* Distribute evenly */
+        / gap: 40px;
     }
 
     .ticket-container {
-        width: 40%; /* Aumentar el ancho para adaptarse a tabletas */
-        margin-left: 0; /* Eliminar márgenes laterales */
+        width: 40%;
+        margin-left: 0;
     }
-
-    
 }
 
-/* Versión para móviles */
+/* Mobile Version */
 @media (max-width: 768px) {
 
     #menu-toggle-label {
         display: block;
-        position: absolute; /* Posición absoluta para controlarlo fácilmente */
-        top: 1rem; /* Ajusta la distancia desde la parte superior */
-        right: 1rem; /* Lo mueve a la derecha */
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
         cursor: pointer;
-        z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+        z-index: 1000;
+    }
+
+    #menu-toggle:checked~nav .dropdown .services-menu {
+        display: block;
+    }
+
+    #menu-toggle:not(:checked)~nav .dropdown .services-menu {
+        display: none;
     }
 
     header {
         padding: 10px;
-    }
-
-    .faq-section {
-        display: grid;
-        grid-template-columns: 1fr; /* Una columna para las preguntas */
-        gap: 20px;
-        margin: 10px;
-        padding: 10px;
-    }
-
-    .faq-header h2 {
-        font-size: 1.5rem; /* Tamaño ajustado para móviles */
-    }
-
-    .faq-icon img {
-        width: 50px;
-        height: 50px;
     }
 
     .navbar {
@@ -507,33 +525,32 @@ header nav ul li a:hover {
         flex-direction: column;
         position: fixed;
         top: 0;
-        left: -80%; /* Fuera del viewport a la izquierda */
-        width: 80%; /* Ancho del navbar */
-        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        left: -60%;
+        width: 80%;
+        height: 90vh;
         background: var(--secondary-color);
         align-items: center;
         padding: 10px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 999; /* Encima del contenido del fondo */
-        transform: translateX(0); /* Inicialmente oculto */
+        z-index: 999;
+        transform: translateX(0);
         transition: transform 0.4s ease;
- /* Centra los enlaces horizontalmente */
     }
 
     .navbar a {
         font-size: 1rem;
-        margin: 10px 0; /* Tamaño reducido para móviles */
+        margin: 10px 0;
     }
 
     .tickets-section {
-        flex-direction: column; 
-        margin-left: 20px;/* Cuadros en una sola columna */
-        align-items: center; /* Centrar los cuadros */
-        gap: 30px; /* Reducir el espacio entre cuadros */
+        flex-direction: column;
+        margin-left: 20px;
+        align-items: center;
+        gap: 30px;
     }
 
     .ticket-container {
-        width: 80%; /* Ancho más grande para móviles */
-        margin-left: 30px; /* Eliminar márgenes laterales */
+        width: 80%;
+        margin-left: 30px;
     }
 }

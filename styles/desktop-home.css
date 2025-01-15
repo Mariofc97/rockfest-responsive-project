@@ -3,14 +3,9 @@
   --secondary-color: #871919;
   --background-color: linear-gradient(to bottom,
       #000000 10%,
-      /* Negro */
       #ff0000 30%,
-      /* Rojo */
       #ff7f00 60%,
-      /* Naranja */
-      #ffff00 90%
-      /* Amarillo */
-    );
+      #ffff00 90%);
   --text-color: #fff;
   --heading-font: "Rock Salt", serif;
   --body-font: "Poppins", serif;
@@ -24,14 +19,9 @@ body {
   font-family: var(--body-font);
   background: linear-gradient(to bottom,
       #000000 10%,
-      /* Negro */
       #ff0000 30%,
-      /* Rojo */
       #ff7f00 60%,
-      /* Naranja */
-      #ffff00 90%
-      /* Amarillo */
-    );
+      #ffff00 90%);
   color: var(--secondary-color);
 }
 
@@ -52,7 +42,7 @@ header .logo {
 
 .navbar {
   display: flex;
-  margin-left: 350px;
+  margin-left: 200px;
   list-style: none;
   gap: 20px;
 }
@@ -68,12 +58,11 @@ header nav ul {
 }
 
 header nav ul li {
-  margin-left: 50px;
+  margin-left: 10px;
   padding-left: 20px;
   text-align: end;
   justify-content: right;
   margin-top: 0
-  
 }
 
 .navbar a {
@@ -88,10 +77,6 @@ header nav ul li {
 .navbar a:hover {
   background: var(--primary-color);
   color: white;
-}
-
-.elements-dropdown {
-  margin: 0;
 }
 
 #menu-toggle {
@@ -121,43 +106,43 @@ header nav ul li {
 
 /* Dropdown */
 .dropdown {
-  position: relative; /* Necesario para que el menú sea relativo al padre */
-}
-
-.dropdown:hover {
-  display: block;
+  position: relative;
+  /* Necessary for the menu to be relative to the parent */
 }
 
 .services-menu {
-  display: inline-block;
-  top: 75%;
-  padding: 10px;
-  white-space: nowrap;
+  display: none;
   position: absolute;
-  left: 0px;
-  z-index: 2;
-  padding-left: 16px;
-  background-color: #252525;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-2vh);
-  transition: opacity 0.3s, transform 0.15s;
+  top: 100%;
+  left: 0;
+  background-color: var(--secondary-color);
+  padding: 10px 0;
+  list-style: none;
+  z-index: 10;
+  width: 200px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown:hover #services-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.services-menu li a {
+  display: block;
+  color: var(--text-color);
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s ease;
 }
 
-header nav ul li a:active {
-  color: var(--primary-color)
+.services-menu li a:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
-header nav ul li a:hover {
-  text-decoration: underline;
+/* Show the menu when hovering */
+.dropdown:hover .services-menu {
+  display: block;
 }
 
+/*Hero Section*/
 
 .logo-relative {
   width: 300px;
@@ -175,30 +160,29 @@ header nav ul li a:hover {
   margin-bottom: 40px;
   display: inline-block;
   transition: transform 0.5s ease;
-  /* Suavidad al girar */
+  //* Smoothness while rotating */
   animation: fadeIn 1s ease;
-  /* Animación de aparición al cargar */
+  /* Fade-in animation on load */
 }
 
 
-/* Efecto hover: giro 360 grados */
+/* Hover Effect: turn 360 grades */
 .logo-band:hover {
   transform: rotate(360deg) scale(1.1);
-  /* Gira y aumenta ligeramente el tamaño */
+  /* Rotates and slightly increases the size */
 }
 
-/* Animación inicial (fade-in) */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: scale(0.8);
-    /* Más pequeño inicialmente */
+    /* Smaller initially */
   }
 
   to {
     opacity: 1;
     transform: scale(1);
-    /* Tamaño normal */
+    /* Normal size */
   }
 }
 
@@ -213,7 +197,7 @@ header nav ul li a:hover {
 .container-hero {
   position: relative;
   width: 100%;
-  height: 100vh margin: 0;
+  margin: 0;
   overflow: visible;
 }
 
@@ -221,14 +205,14 @@ header nav ul li a:hover {
   width: 100%;
   height: 134vh;
   object-fit: cover;
-  /* Ajusta la imagen sin deformarla */
+  /* Adjusts the image without distorting it */
   display: block;
 
 }
 
 .overlay {
   position: absolute;
-  top: 75%;
+  top: 76%;
   left: 79.6%;
   transform: translate(-50%, -50%);
   background-color: rgba(54, 54, 54, 0.7);
@@ -236,12 +220,12 @@ header nav ul li a:hover {
   text-align: center;
   padding: 30px;
   height: 134%;
-  width: 25%;
+  width: 350px;
 }
 
 .overlay p {
   line-height: 1.8;
-  margin-bottom: 30px;/ padding: 10px;
+  padding: 10px;
   animation: fadeIn 1s ease;
 }
 
@@ -263,9 +247,7 @@ header nav ul li a:hover {
 .hero .btn-primary {
   display: inline-block;
   background-color: var(--primary-color);
-  /* Fondo naranja */
   color: #ffffff;
-  /* Texto blanco */
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -277,19 +259,16 @@ header nav ul li a:hover {
 
 .hero .btn-primary:hover {
   background-color: #d0442c;
-  /* Fondo más oscuro al pasar el mouse */
+  /* Darker background on hover */
   transform: scale(1.1);
 }
 
 .hero .btn-secondary {
   display: inline-block;
   background-color: transparent;
-  /* Fondo transparente */
   color: var(--primary-color);
-  /* Texto naranja */
   padding: 10px 20px;
   border: 2px solid #ff5733;
-  /* Borde naranja */
   border-radius: 5px;
   text-decoration: none;
   font-size: 1rem;
@@ -298,12 +277,10 @@ header nav ul li a:hover {
 }
 
 .hero .btn-secondary:hover {
-  background-color: #ff5733;
-  /* Fondo naranja al pasar el mouse */
-  color: #ffffff;
-  /* Texto blanco */
+  background-color: var(--primary-color);
+  /* Orange background on hover */
+  color: var(--text-color);
   transform: scale(1.1);
-  /* Efecto de zoom */
 }
 
 .modal {
@@ -354,7 +331,7 @@ header nav ul li a:hover {
 .description {
   background-color: var(--secondary-color);
   text-align: center;
-  padding: 0px margin: 0px
+  margin: 0px
 }
 
 .parking-camping {
@@ -374,7 +351,7 @@ header nav ul li a:hover {
   margin-bottom: 30px;
 }
 
-/* Botones */
+/* Buttons */
 .buttons {
   display: flex;
   justify-content: center;
@@ -383,7 +360,7 @@ header nav ul li a:hover {
 
 .button-container {
   perspective: 1000px;
-  /* Habilitar perspectiva 3D */
+  /* Enable 3D perspective */
 }
 
 .flip-button {
@@ -394,13 +371,13 @@ header nav ul li a:hover {
   text-align: center;
   cursor: pointer;
   transform-style: preserve-3d;
-  /* Activar rotación 3D */
+  /* Enable 3D rotation */
   transition: transform 0.6s ease;
 }
 
 .flip-button:hover {
   transform: rotateY(180deg);
-  /* Rotación en el hover */
+  /* Rotation on hover */
 }
 
 .flip-button .front,
@@ -409,7 +386,7 @@ header nav ul li a:hover {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  /* Ocultar el lado trasero al rotar */
+  /* Hide the back side while rotating */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -418,13 +395,13 @@ header nav ul li a:hover {
   font-weight: bold;
 }
 
-/* Lado Frontal */
+/* Front Side */
 .flip-button .front {
   background: var(--primary-color);
   color: white;
 }
 
-/* Lado Trasero */
+/* Back Side */
 .flip-button .back {
   background: black;
   color: var(--primary-color);
@@ -434,7 +411,7 @@ header nav ul li a:hover {
 
 .flip-button .back:hover {
   background: #333;
-  /* Fondo más oscuro al pasar el mouse sobre "View" */
+  /* Darker background on hover over "View" */
 }
 
 
@@ -505,7 +482,7 @@ input[type="radio"] {
   display: none;
 }
 
-/* Navegación entre vistas */
+/* Navigation between views */
 #july15-1:checked~.carousel-track {
   transform: translateX(0);
 }
@@ -514,7 +491,7 @@ input[type="radio"] {
   transform: translateX(-100%);
 }
 
-/* Botones de navegación */
+/* Navigation Buttons*/
 .carousel-navigation {
   position: absolute;
   top: 50%;
@@ -526,16 +503,16 @@ input[type="radio"] {
 
 .carousel-navigation label {
   pointer-events: all;
-  /* Permitir clics en los botones */
+  /* Allow clicks on the buttons */
   background: rgba(0, 0, 0, 0.6);
-  /* Fondo semitransparente */
+  /* Semi-transparent background */
   color: white;
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 50%;
-  /* Forma circular */
+  /* Circular shape */
   border: 2px solid var(--primary-color);
-  /* Borde con el color principal */
+  /* Border with the primary color */
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -545,10 +522,9 @@ input[type="radio"] {
 
 .carousel-navigation label:hover {
   background: var(--primary-color);
-  /* Fondo cambia al color principal */
   color: white;
   transform: scale(1.2);
-  /* Efecto de zoom */
+  /* Zoom effect */
 }
 
 .carousel-navigation .prev {
@@ -560,7 +536,7 @@ input[type="radio"] {
 .carousel-navigation .next {
   position: absolute;
   right: -10px;
-  /* Ajusta la distancia fuera del carrusel */
+  /* Adjusts the distance outside the carousel */
 }
 
 #july15-1:checked~.carousel-track {
@@ -571,7 +547,7 @@ input[type="radio"] {
   transform: translateX(-100%);
 }
 
-/* Carrusel para July 16 */
+/* Carousel July 16 */
 #july16-1:checked~.carousel-track {
   transform: translateX(0);
 }

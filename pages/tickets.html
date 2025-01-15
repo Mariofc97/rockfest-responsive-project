@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,22 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rock+Salt&display=swap" rel="stylesheet">
-     <!-- Bootstrap CSS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rock+Salt&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/desktop-tickets.css">
     <link rel="stylesheet" href="./styles/responsive.css">
 </head>
+
 <body>
     <header>
         <nav>
             <div>
                 <img src="../assets/images/logo.png" alt="logo" class="logo">
             </div>
-            <!-- Menú hamburguesa -->
+            <!-- Hamburger menu -->
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" id="menu-toggle-label" role="button" aria-label="Toggle navigation menu"
                 aria-labelledby="nav-label" aria-controls="nav-menu" aria-expanded="false">
@@ -27,133 +31,133 @@
                     <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"></path>
                 </svg>
             </label>
-            <span id="nav-label" class="visually-hidden">Hamburger menu icon to toggle the navigation menu on mobile</span>
-            <!-- Menú principal -->
+            <span id="nav-label" class="visually-hidden"></span>
+            <!-- Main menu -->
             <ul id="nav-menu" class="navbar">
                 <li><a href="../index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="../pages/tickets.html">Tickets</a>
+                    <a href="#" id="current-page">Tickets</a>
                     <ul class="services-menu">
                         <li class="elements-dropdown"><a href="#">Festival</a></li>
                         <li class="elements-dropdown"><a href="#">Camping</a></li>
                         <li class="elements-dropdown"><a href="#">Parking</a></li>
                     </ul>
                 </li>
-                <li><a href="#" id="current-page">FAQ</a></li>
+                <li><a href="./FAQ.html">FAQ</a></li>
                 <li id="last-item"><a href="../pages/contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-  <main>
-    <div class="title">
-      <h1>TICKETING OPTIONS</h1>
-    </div>
-    <section id="tickets" class="tickets-section">
-      <div class="container">
-          <!-- Contenedor Festival -->
-          <div class="ticket-container">
-              <div class="ticket-card">
-                  <div class="ticket-front">
-                      <img src="../assets/images/music(1).png" alt="Festival Logo" class="ticket-logo">
-                      <h3>Festival</h3>
-                  </div>
-                  <div class="ticket-back">
-                      <p>(1) 1-Day General Admission wristband.<br>
-                         *Does not include parking or Camp Access Pass</p>
-                      <form method="POST" action="cart.html" class="ticket-form">
-                          <label for="festival-select">View:</label>
-                          <select name="festival-ticket" id="festival-select" required>
-                              <option value="day-pass-15">Day Pass 15 July: 40 CAD</option>
-                              <option value="day-pass-16">Day Pass 16 July: 40 CAD</option>
-                              <option value="general-pass-2-days">2 Days General Pass: 75 CAD</option>
-                          </select>
-                          <button type="submit" class="btn-primary">Add to Cart</button>
-                      </form>
-                  </div>
-              </div>
-          </div>
+    <main>
+        <div class="title">
+            <h1>TICKETING OPTIONS</h1>
+        </div>
+        <section id="tickets" class="tickets-section">
+            <div class="container">
+                <!-- Festival container -->
+                <div class="ticket-container">
+                    <div class="ticket-card">
+                        <div class="ticket-front">
+                            <img src="../assets/images/music(1).png" alt="Festival Logo" class="ticket-logo">
+                            <h3>Festival</h3>
+                        </div>
+                        <div class="ticket-back">
+                            <p>(1) 1-Day General Admission wristband.<br>
+                                *Does not include parking or Camp Access Pass</p>
+                            <form method="POST" action="cart.html" class="ticket-form">
+                                <label for="festival-select">View:</label>
+                                <select name="festival-ticket" id="festival-select" required>
+                                    <option value="day-pass-15">Day Pass 15 July: 40 CAD</option>
+                                    <option value="day-pass-16">Day Pass 16 July: 40 CAD</option>
+                                    <option value="general-pass-2-days">2 Days General Pass: 75 CAD</option>
+                                </select>
+                                <button type="submit" class="btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
-          <!-- Contenedor Camping -->
-          <div class="ticket-container">
-              <div class="ticket-card">
-                  <div class="ticket-front">
-                      <img src="../assets/images/tent.png" alt="Camping Logo" class="ticket-logo">
-                      <h3>Camping</h3>
-                  </div>
-                  <div class="ticket-back">
-                      <p>Grants entry into the campgrounds.<br>
-                         Note: one Camp Access Pass is included with each campsite purchase.<br>
-                         *This ticket option does not include a parking.</p>
-                      <form method="POST" action="cart.html" class="ticket-form">
-                          <label for="camping-select">View:</label>
-                          <select name="camping-ticket" id="camping-select" required>
-                              <option value="camp-access-15">Camp Access 15 July: 35 CAD</option>
-                              <option value="camp-access-16">Camp Access 16 July: 35 CAD</option>
-                              <option value="camp-access-2-days">2 Days Camp Access: 60 CAD</option>
-                          </select>
-                          <button type="submit" class="btn-primary">Add to Cart</button>
-                      </form>
-                  </div>
-              </div>
-          </div>
+                <!-- Camping container -->
+                <div class="ticket-container">
+                    <div class="ticket-card">
+                        <div class="ticket-front">
+                            <img src="../assets/images/tent.png" alt="Camping Logo" class="ticket-logo">
+                            <h3>Camping</h3>
+                        </div>
+                        <div class="ticket-back">
+                            <p>Grants entry into the campgrounds.<br>
+                                Note: one Camp Access Pass is included with each campsite purchase.<br>
+                                *This ticket option does not include a parking.</p>
+                            <form method="POST" action="cart.html" class="ticket-form">
+                                <label for="camping-select">View:</label>
+                                <select name="camping-ticket" id="camping-select" required>
+                                    <option value="camp-access-15">Camp Access 15 July: 35 CAD</option>
+                                    <option value="camp-access-16">Camp Access 16 July: 35 CAD</option>
+                                    <option value="camp-access-2-days">2 Days Camp Access: 60 CAD</option>
+                                </select>
+                                <button type="submit" class="btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
-          <!-- Contenedor Parking -->
-          <div class="ticket-container">
-              <div class="ticket-card">
-                  <div class="ticket-front">
-                      <img src="../assets/images/parking.png" alt="Parking Logo" class="ticket-logo">
-                      <h3>Parking</h3>
-                  </div>
-                  <div class="ticket-back">
-                      <p>General Parking is located right outside the concert grounds.<br>
-                         Note for those camping: one vehicle is allowed per site.<br>
-                         Any additional vehicles go in General Parking w/ the appropriate sticker.</p>
-                      <form method="POST" action="cart.html" class="ticket-form">
-                          <label for="parking-select">View:</label>
-                          <select name="parking-ticket" id="parking-select" required>
-                              <option value="parking-15">Parking 15 July: 15 CAD</option>
-                              <option value="parking-16">Parking 16 July: 15 CAD</option>
-                              <option value="parking-2-days">2 Days Parking: 30 CAD</option>
-                          </select>
-                          <button type="submit" class="btn-primary">Add to Cart</button>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  <section id="newsletter" class="newsletter-section">
-      <div class="newsletter-content">
-          <h2>JOIN THE FESTIVAL NEWS</h2>
-          <p>Receive all the latest updates and news about the festival</p>
-          <form class="newsletter-form" method="POST" action="subscribe.html">
-              <input type="text" placeholder="Enter your name" required>
-              <input type="email" placeholder="Enter your email" required>
-              <div class="privacy-checkbox">
-                  <input type="checkbox" id="privacy-policy" required>
-                  <label for="privacy-policy">I have read and accept the privacy policy</label>
-              </div>
-              <button type="submit" class="btn-newsletter">Subscribe</button>
-          </form>
-      </div>
-  </section>
-  </main>
-  <footer class="footer">
-    <p>Contact us: info@metalfest2025.com <br>
-      <div class="social-icons">
-        <a href="#"><img src="../assets/images/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="../assets/images/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="../assets/images/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="../assets/images/youtube.png" alt="YouTube"></a>
-        <a href="#"><img src="../assets/images/spotify.png" alt="Spotify"></a>
-    </div>
+                <!-- Parking Container -->
+                <div class="ticket-container">
+                    <div class="ticket-card">
+                        <div class="ticket-front">
+                            <img src="../assets/images/parking.png" alt="Parking Logo" class="ticket-logo">
+                            <h3>Parking</h3>
+                        </div>
+                        <div class="ticket-back">
+                            <p>General Parking is located right outside the concert grounds.<br>
+                                Note for those camping: one vehicle is allowed per site.<br>
+                                Any additional vehicles go in General Parking w/ the appropriate sticker.</p>
+                            <form method="POST" action="#" class="ticket-form">
+                                <label for="parking-select">View:</label>
+                                <select name="parking-ticket" id="parking-select" required>
+                                    <option value="parking-15">Parking 15 July: 15 CAD</option>
+                                    <option value="parking-16">Parking 16 July: 15 CAD</option>
+                                    <option value="parking-2-days">2 Days Parking: 30 CAD</option>
+                                </select>
+                                <button type="submit" class="btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="newsletter" class="newsletter-section">
+            <div class="newsletter-content">
+                <h2>JOIN THE FESTIVAL NEWS</h2>
+                <p>Receive all the latest updates and news about the festival</p>
+                <form class="newsletter-form" method="POST" action="#">
+                    <input type="text" placeholder="Enter your name" required>
+                    <input type="email" placeholder="Enter your email" required>
+                    <div class="privacy-checkbox">
+                        <input type="checkbox" id="privacy-policy" required>
+                        <label for="privacy-policy">I have read and accept the privacy policy</label>
+                    </div>
+                    <button type="submit" class="btn-newsletter">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Contact us: info@metalfest2025.com <br>
+        <div class="social-icons">
+            <a href="#"><img src="../assets/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="../assets/images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="../assets/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="../assets/images/youtube.png" alt="YouTube"></a>
+            <a href="#"><img src="../assets/images/spotify.png" alt="Spotify"></a>
+        </div>
         <p>Published <time datetime="2024-12-05">January 16, 2024</time></p>
         <nav aria-label="Footer navigation">
             <ul style="font-size: medium;">
-                <li><a href="#FAQ">FAQ</a></li>
-                <li><a href="#Terms">Terms</a></li>
-                <li><a id="privacy-link" href="#Privacy">Privacy</a></li>
-                <li><a href="#Cookies">Cookies</a></li>
+                <li><a href="../pages/FAQ.html">FAQ</a></li>
+                <li><a href="../pages/404.html">Terms</a></li>
+                <li><a id="privacy-link" href="../pages/404.html">Privacy</a></li>
+                <li><a href="../pages/404.html">Cookies</a></li>
             </ul>
         </nav>
         <p>&copy; Metalfest2025. All rights reserved</p>
